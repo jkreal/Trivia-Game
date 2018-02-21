@@ -7,8 +7,15 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Trivia Game</title>
 
+	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
+
+	<!-- Custom stylesheet -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+
+	<!-- Google fonts: Alfa Slab One & Bangers -->
+	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bangers" rel="stylesheet">
 </head>
 
 <body>
@@ -16,14 +23,48 @@
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a class = "navbar-brand"></a>
+				<a class="navbar-brand" href="./index.html">Trivia Game</a>
 			</div>
 		</div>
 	</div>
 
+	<div class="container main-container">
+		<div class="row top-row">
+			<div class="col-md-12">
+				Hello
+			</div>
+		</div>
 
+		<div class="row timer-row">
+			<div class="col-md-12 timer-col">
+				<h2 id="timer">30</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container bottom-container">
+		<div class="row">
+			<div class="col-md-3">
+				<button class="answer-button btn btn-info" id="button-a">A</button>
+			</div>
+			<div class="col-md-3">
+				<button class="answer-button btn btn-info" id="button-b">B</button>
+			</div>
+			<div class="col-md-3">
+				<button class="answer-button btn btn-info" id="button-c">C</button>
+			</div>
+			<div class="col-md-3">
+				<button class="answer-button btn btn-info" id="button-d">D</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		Stuff
+	</div>
 
 	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
