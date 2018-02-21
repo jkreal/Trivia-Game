@@ -39,12 +39,6 @@ window.onload = function () {
 	timer.run();
 	console.log("loaded");
 
-	$.ajax({
-		type: "GET",
-		url: "questions.html"
-	}).then(function(response) {
-		console.log(response.question1.question);
-	});
 }
 
 
