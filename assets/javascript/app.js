@@ -2,6 +2,7 @@ var currentQuestion = questions[0];
 var prevQuestions = [];
 var questionNumber = 1;
 var gameRunning = true;
+var score = 0;
 var intervalId;
 var number;
 
@@ -12,17 +13,12 @@ window.onload = function () {
 }
 
 function randomQuestion() {
-var questionNum = 0;
 
 	do {
-		questionNum++;
 		currentQuestion = questions[Math.floor(Math.random() * (questions.length))];
-
-		if(questionNum >= questions.length){
-			break;
-		}
 	} while (prevQuestions.includes(currentQuestion));
 
+	prevQuestions.push(currentQuestion);
 }
 
 function storeQuestion() {
@@ -37,14 +33,13 @@ var timer = {
 			this.number--;
 			$('#timer').text(this.number);
 
-
-			if (this.number == 0) {
+			if (this.number === 0) {
 				clearInterval(intervalId);
-				gameOver();
+				timeUp();
 				stop();
 			}
 
-		}, 1000);
+		}, 100);
 	},
 
 	stop: function () {
@@ -54,9 +49,9 @@ var timer = {
 }
 
 function updateContent() {
+
 	$('#title').text("Question #" + questionNumber);
 	$('#question').text(currentQuestion.question);
-
 	$('.answers').children().children().each(function (index, current) {
 		$(current).text(currentQuestion.answers[index]);
 	});
@@ -82,6 +77,7 @@ function showAnswer(correct) {
 	$('#next-button').show();
 	if (correct) {
 		$('#title').text("Correct!");
+		score++;
 	}
 	else {
 		$('#title').text("Incorrect!");
@@ -101,7 +97,7 @@ function resetButtons() {
 }
 
 $('#next-button').on("click", function () {
-	if(questionNumber < questions.length){
+	if (questionNumber < questions.length) {
 		resetButtons();
 		timer.run();
 		$(this).hide();
@@ -115,6 +111,16 @@ $('#next-button').on("click", function () {
 	}
 });
 
-function gameOver(){
+function timeUp() {
 	$('#timer').text("Time's Up!");
+	$('#next-button').show();
+
+	$('.answers').children().children().each(function (index, current) {
+		$(current).hide();
+	});
+
+}
+
+function gameOver() {
+
 }
