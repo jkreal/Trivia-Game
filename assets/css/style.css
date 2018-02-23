@@ -13,7 +13,7 @@ body {
 }
 
 .main-container {
-    height: 70vh;
+    height: 85vh;
     width: 65%;
     background-color: whitesmoke;
     border-radius: 25px;
@@ -48,7 +48,7 @@ button {
     color: red;
 }
 
-.answer-button{
+.answer-button {
     width: 100%;
 }
 
@@ -61,9 +61,35 @@ button {
     bottom: 0;
 }
 
-h2 {
+#timer {
 	font-size: 70px;
 	font-family: 'Alfa Slab One', cursive;
+}
+
+.timer-row {
+	margin-bottom: 2vh;
+}
+
+#question {
+	font-family: 'Bitter', cursive;
+	font-size: 42px;
+}
+
+h1 {
+ font-family: 'Bitter', cursive;
+ font-size: 50px;
+}
+
+.answers {
+	margin-top: 0vh;
+}
+
+.answer-button {
+	width: 75%;
+}
+
+#main-image {
+ width: 250px;
 }
 
 @media only screen and (max-width: 500px){

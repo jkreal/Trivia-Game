@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 
 	<!-- Google fonts: Alfa Slab One & Bangers -->
-	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bangers" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bitter" rel="stylesheet">
 </head>
 
 <body>
@@ -29,34 +29,52 @@
 	</div>
 
 	<div class="container main-container">
+
 		<div class="row top-row">
 			<div class="col-md-12">
-				Hello
+				<h1 id="title">Title</h1>
 			</div>
 		</div>
 
 		<div class="row timer-row">
 			<div class="col-md-12 timer-col">
-				<h2 id="timer">30</h2>
+				<h2 id="timer">20</h2>
 			</div>
 		</div>
-	</div>
 
-	<div class="container bottom-container">
-		<div class="row">
-			<div class="col-md-3">
-				<button class="answer-button btn btn-info" id="button-a">A</button>
-			</div>
-			<div class="col-md-3">
-				<button class="answer-button btn btn-info" id="button-b">B</button>
-			</div>
-			<div class="col-md-3">
-				<button class="answer-button btn btn-info" id="button-c">C</button>
-			</div>
-			<div class="col-md-3">
-				<button class="answer-button btn btn-info" id="button-d">D</button>
+		<div class="row image-row">
+			<div class="col-md-12">
+				<img src="./assets/images/captain-placeholder.jpg" alt="An image" id="main-image">
 			</div>
 		</div>
+
+		<div class="row center-row">
+			<div class="col-md-12">
+				<h2 id="question">In so and so, which character does this certain thing while this other thing is also going on?</h2>
+			</div>
+		</div>
+
+		<div class="row answers">
+			<div class="col-md-6">
+				<button class="btn btn-default answer-button">Answer</button>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-default answer-button">Answer</button>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-default answer-button">Answer</button>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-default answer-button">Answer</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<button class="btn btn-default" id="next-button">Next Question</button>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="footer">
@@ -64,6 +82,7 @@
 	</div>
 
 	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="./assets/javascript/questions.js"></script>
 	<script src="./assets/javascript/app.js"></script>
 </body>
 
