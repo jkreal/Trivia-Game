@@ -39,7 +39,7 @@ var timer = {
 				stop();
 			}
 
-		}, 100);
+		}, 1000);
 	},
 
 	stop: function () {
@@ -106,7 +106,11 @@ function resetButtons() {
 }
 
 $('#next-button').on("click", function () {
-	if (questionNumber < questions.length) {
+	if (!gameRunning) {
+		resetGame();
+
+
+	} else if (questionNumber < questions.length) {
 		resetButtons();
 		timer.run();
 		$(this).hide();
@@ -119,6 +123,7 @@ $('#next-button').on("click", function () {
 		console.log("over");
 		gameOver();
 	}
+
 });
 
 function timeUp() {
@@ -132,13 +137,33 @@ function timeUp() {
 function gameOver() {
 	$('#timer').text("You scored " + score + " out of " + questions.length + "!");
 	$('#next-button').text("Play Again");
-
+	gameRunning = false;
+	$('#question').text("");
 	hideAnswers();
-
 }
 
 function hideAnswers() {
 	$('.answers').children().children().each(function (index, current) {
 		$(current).hide();
 	});
+}
+
+function showAnswers() {
+	$('.answers').children().children().each(function (index, current) {
+		$(current).show();
+	});
+}
+
+function resetGame() {
+	resetButtons();
+	$('#next-button').text("Next Question");
+	$('#next-button').hide();
+	gameRunning = true;
+	questionNumber = 1;
+	prevQuestions = [];
+	timer.run();
+	$('#title').text("Question #" + questionNumber);
+	randomQuestion();
+	updateContent();
+	showAnswers();
 }
