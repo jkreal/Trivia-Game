@@ -1,3 +1,5 @@
+//
+
 var currentQuestion = questions[0];
 var prevQuestions = [];
 var questionNumber = 1;
