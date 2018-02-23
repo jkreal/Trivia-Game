@@ -52,6 +52,7 @@ function updateContent() {
 
 	$('#title').text("Question #" + questionNumber);
 	$('#question').text(currentQuestion.question);
+	$('#main-image').attr('src', currentQuestion.imgsrc);
 	$('.answers').children().children().each(function (index, current) {
 		$(current).text(currentQuestion.answers[index]);
 	});
@@ -131,7 +132,6 @@ function timeUp() {
 	$('#next-button').show();
 
 	hideAnswers();
-
 }
 
 function gameOver() {
