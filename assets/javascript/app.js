@@ -85,7 +85,10 @@ function showAnswer(correct) {
 
 	$('.answers').children().children().each(function (index, current) {
 		if ($(this).text() !== currentQuestion.correct) {
-			$(this).hide();
+			$(this).addClass('btn-danger').removeClass('btn-default');
+		}
+		else {
+			$(this).addClass('btn-success').removeClass('btn-default');
 		}
 	});
 }
@@ -93,6 +96,12 @@ function showAnswer(correct) {
 function resetButtons() {
 	$('.answers').children().children().each(function (index, current) {
 		$(current).show();
+		if ($(this).text() !== currentQuestion.correct) {
+			$(this).addClass('btn-default').removeClass('btn-danger');
+		}
+		else {
+			$(this).addClass('btn-default').removeClass('btn-success');
+		}
 	});
 }
 
@@ -108,6 +117,7 @@ $('#next-button').on("click", function () {
 	}
 	else {
 		console.log("over");
+		gameOver();
 	}
 });
 
@@ -115,12 +125,20 @@ function timeUp() {
 	$('#timer').text("Time's Up!");
 	$('#next-button').show();
 
-	$('.answers').children().children().each(function (index, current) {
-		$(current).hide();
-	});
+	hideAnswers();
 
 }
 
 function gameOver() {
+	$('#timer').text("You scored " + score + " out of " + questions.length + "!");
+	$('#next-button').text("Play Again");
 
+	hideAnswers();
+
+}
+
+function hideAnswers() {
+	$('.answers').children().children().each(function (index, current) {
+		$(current).hide();
+	});
 }
